@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="link/main/styles-history.css">
+    <script src="link/main/race.js" defer></script>
+    <title>F1 - Race Details</title>
+</head>
+<body>
+    <ul class="navbar">
+        <li class="home"><a href="index.html">Výběr</a></li>
+        <li class="history"><a href="history.html">Historie</a></li>
+        <li class="live"><a href="#">Živě</a></li>
+    </ul>
+
+    <div class="content-wrapper">
+        <h1 id="race-title">Načítání...</h1>
+        <p id="circuit-name"></p>
+        <p id="race-date"></p>
+
+        <h2>Výsledky závodu</h2>
+        <table id="race-results">
+            <thead>
+                <tr>
+                    <th>Pos</th>
+                    <th>Driver</th>
+                    <th>Car</th>
+                    <th>Laps</th>
+                    <th>Time/Retired</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Nejrychlejší kola</h2>
+        <p id="fastest-lap"></p>
+
+        <h2>Startovní rošt</h2>
+        <table id="grid">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Driver</th>
+                    <th>Team</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Kvalifikace</h2>
+        <table id="qualifying">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Driver</th>
+                    <th>Q1</th>
+                    <th>Q2</th>
+                    <th>Q3</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</body>
+</html>

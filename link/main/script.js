@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     async function loadRaces(season) {
-        raceContainer.innerHTML = "<p>Loading races...</p>";
-        
+        raceContainer.innerHTML = "<p>Načítání závodů...</p>";
+
         try {
             const response = await fetch(`https://api.jolpi.ca/ergast/f1/${season}.json`);
             const data = await response.json();
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             raceContainer.innerHTML = "";
 
             if (races.length === 0) {
-                raceContainer.innerHTML = "<p>No races found for this season.</p>";
+                raceContainer.innerHTML = "<p>Žádné závody nebyly pro tuto sezónu nalezeny...</p>";
                 return;
             }
 
@@ -30,16 +30,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                 box.classList.add("race-box");
 
                 box.innerHTML = `
-                    <strong>${race.raceName}</strong><br>
+                    <strong>
+                        <a href="race.html?season=${season}&round=${race.round}" 
+                           style="text-decoration: none; color: white;">
+                            ${race.raceName}
+                    </strong><br>
                     ${race.Circuit.circuitName}<br>
-                    ${race.date}
+                    ${race.date}</a>
                 `;
 
                 raceContainer.appendChild(box);
             });
         } catch (error) {
             console.error("Error fetching F1 races:", error);
-            raceContainer.innerHTML = "<p>Error loading race data. Please try again later.</p>";
+            raceContainer.innerHTML = "<p>Chyba při načítání. Prosím zkuste znovu.</p>";
         }
     }
 

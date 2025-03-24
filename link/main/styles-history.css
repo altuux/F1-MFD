@@ -11,9 +11,12 @@ body {
 }
 
 #controls {
-    margin-bottom: 20px;
+    margin-bottom: 2.5%;
     margin-top: 100px;
     font-weight: 600;
+    text-align: left;
+    margin-left: 10.5%;
+    font-size: 20px;
 }
 
 #season-select {
@@ -50,6 +53,7 @@ body {
 
 .race-box {
     padding: 20px;
+    padding-top: 50px;
     border-radius: 10px;
     background: #111;
     color: rgb(255, 255, 255);
