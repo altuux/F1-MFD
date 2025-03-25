@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: left;
     background: #111;
-    padding: 15px 0;
+    padding: 15px 10px;
     margin: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -138,5 +138,30 @@ table th {
     #sprint-results {
         grid-column: span 1;
     }
-}
 
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+    
+    .table-wrapper table {
+        min-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }    
+
+    .table-wrapper div {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .racet h2, .gridt h2, .qualt h2, .sracet h2 {
+        display: block;
+    }
+
+    .racet table, .gridt table, .qualt table, .sracet table {
+        display: block;
+    }
+
+}

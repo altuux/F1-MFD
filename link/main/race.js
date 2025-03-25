@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("race-date").textContent = race.date;
 
             const resultsTable = document.querySelector("#race-results tbody");
+
             race.Results.forEach(result => {
                 resultsTable.innerHTML += `
                     <tr>
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             const gridTable = document.querySelector("#grid tbody");
+
             race.Results.forEach(result => {
                             gridTable.innerHTML += `
                                 <tr>
