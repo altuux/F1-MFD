@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const raceContainer = document.getElementById("race-container");
 
     const currentYear = new Date().getFullYear();
+    const today = new Date();
+
     for (let year = currentYear; year >= 1950; year--) {
         const option = document.createElement("option");
         option.value = year;
@@ -26,15 +28,20 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             races.reverse().forEach((race) => {
+                const raceDate = new Date(race.date);
+
+                if (season == currentYear && raceDate > today) {
+                    return;
+                }
+
                 const box = document.createElement("div");
                 box.classList.add("race-box");
 
                 box.innerHTML = `
                     <strong>
-                        <a href="race.html?season=${season}&round=${race.round}" 
-                           style="text-decoration: none; color: white;">
-                            ${race.raceName}
-                    </strong><br>
+                    <a href="race.html?season=${season}&round=${race.round}" 
+                    style="text-decoration: none; color: white;">
+                    ${race.raceName}</strong><br>
                     ${race.Circuit.circuitName}<br>
                     ${race.date}</a>
                 `;

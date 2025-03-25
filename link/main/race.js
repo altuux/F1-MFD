@@ -32,12 +32,22 @@ document.addEventListener("DOMContentLoaded", async () => {
                 `;
             });
 
-            // Fetch qualifying results
-            const qualifyingResponse = await fetch(`https://ergast.com/api/f1/${season}/${round}/qualifying.json`);
+            const gridTable = document.querySelector("#grid tbody");
+            race.Results.forEach(result => {
+                            gridTable.innerHTML += `
+                                <tr>
+                                    <td>${result.position}</td>
+                                    <td>${result.Driver.familyName}</td>
+                                    <td>${result.Constructor.name}</td>
+                                </tr>
+                            `;
+                        });
+
+            const qualifyingResponse = await fetch(`https://api.jolpi.ca/ergast/f1/${season}/${round}/qualifying.json`);
             const qualifyingData = await qualifyingResponse.json();
             const qualifyingResults = qualifyingData.MRData.RaceTable.Races[0].QualifyingResults;
             const qualifyingTable = document.querySelector("#qualifying tbody");
-            
+
             qualifyingResults.forEach(q => {
                 qualifyingTable.innerHTML += `
                     <tr>
@@ -49,6 +59,30 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </tr>
                 `;
             });
+
+            const sprintResponse = await fetch(`https://api.jolpi.ca/ergast/f1/${season}/${round}/sprint.json`);
+            const sprintData = await sprintResponse.json();
+
+            if (sprintData.MRData.RaceTable.Races.length > 0) {
+                document.getElementById("sprint-header").style.display = "block";
+                document.getElementById("sprint-results").style.display = "block";
+
+                const sprintRace = sprintData.MRData.RaceTable.Races[0];
+                const sprintTable = document.querySelector("#sprint-results tbody");
+
+                sprintRace.SprintResults.forEach(result => {
+                    sprintTable.innerHTML += `
+                        <tr>
+                            <td>${result.position}</td>
+                            <td>${result.Driver.familyName}</td>
+                            <td>${result.Constructor.name}</td>
+                            <td>${result.laps}</td>
+                            <td>${result.Time ? result.Time.time : "Retired"}</td>
+                            <td>${result.points}</td>
+                        </tr>
+                    `;
+                });
+            }
 
         } catch (error) {
             console.error("Error loading race details:", error);
