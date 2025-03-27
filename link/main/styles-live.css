@@ -1,0 +1,4 @@
+.leaderboard { width: 80%; margin: auto; border-collapse: collapse; }
+.leaderboard th, .leaderboard td { padding: 10px; border-bottom: 1px solid #444; }
+.leaderboard th { background: #222; }
+.leaderboard tr:hover { background: #333; }

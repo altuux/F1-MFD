@@ -123,3 +123,22 @@ h1:hover::after {
         font-size: 1em;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.01;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.button-container {
+    animation: fadeIn 1s ease-in-out;
+}
