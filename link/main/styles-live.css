@@ -1,4 +1,58 @@
-.leaderboard { width: 80%; margin: auto; border-collapse: collapse; }
-.leaderboard th, .leaderboard td { padding: 10px; border-bottom: 1px solid #444; }
-.leaderboard th { background: #222; }
-.leaderboard tr:hover { background: #333; }
+.leaderboard {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+.leaderboard tr {
+    border: 1px solid #333;
+}
+
+.leaderboard td {
+    padding: 20px;
+}
+
+.pos {
+    display: flex;
+    align-items: center;
+    color: rgb(46, 44, 44);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 4px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.leaderboard th {
+    background: #222;
+    font-weight: 600;
+    padding: 2px;
+    font-size: 0.7rem;
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        padding: 0 10px;
+    }
+
+    .leaderboard {
+        min-width: 100%;
+        white-space: nowrap;
+    }
+}
