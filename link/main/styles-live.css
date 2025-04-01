@@ -12,23 +12,43 @@
     border: 1px solid #333;
 }
 
-.leaderboard td {
-    padding: 20px;
+.leaderboard th {
+    text-align: left;
+    margin-left: 2px;
 }
 
 .pos {
+    font-weight: 800;
     display: flex;
     align-items: center;
-    color: rgb(46, 44, 44);
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 14px;
-    margin: 4px;
+    border-radius: 12px;
     text-align: center;
-    font-size: 14px;
-    width: 100%;
-    height: 100%;
-    
+    gap: 0.5rem;
+    margin: 5px;
+    margin-top: 10px;
+    padding: 4px;
+    max-width: 120px;
+}
+
+.nmb {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.divnme {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 6px;
+    margin: 2px;
+    display: flex;
+}
+
+.drs {
+    border: 2px solid rgb(112, 112, 112);
+    color:rgb(112, 112, 112);
+    border-radius: 6px;
+    padding: 8px;
+    font-weight: 600;
 }
 
 .leaderboard th {
