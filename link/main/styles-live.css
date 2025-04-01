@@ -1,3 +1,82 @@
+.sessiondetails {
+    display: flex;
+    justify-content: space-between; /* Vyrovnání bloků */
+    align-items: center;
+    padding: 30px;
+    background-color: #222;
+    position: relative;
+    width: 100%;
+}
+
+.left-section {
+    flex: 1;
+    
+}
+
+.center-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    gap: 10px;
+    flex: 1;
+}
+
+.race-info {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.conditions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.condition {
+    background-color: #333;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.track-temp { color: #f4c542; background-color: rgba(255, 204, 0, 0.2); } /* Yellow */
+.air-temp { color: #ff5733; background-color: rgba(255, 87, 51, 0.2); }  /* Red */
+.humidity { color: #22a6f2; background-color: rgba(34, 166, 242, 0.2); } /* Blue */
+.wind { color: white; background-color: rgba(200, 200, 200, 0.2); } /* Light gray */
+
+.status-clear {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 28px;
+}
+
+
+/* */
+
 .leaderboard {
     width: 100%;
     max-width: 600px;
@@ -67,12 +146,16 @@
 @media (max-width: 768px) {
     .table-wrapper {
         width: 100%;
-        overflow-x: auto;
-        padding: 0 10px;
     }
 
     .leaderboard {
         min-width: 100%;
         white-space: nowrap;
+    }
+}
+
+@media (max-width: 498px) {
+    .leaderboard {
+        display: block;
     }
 }
